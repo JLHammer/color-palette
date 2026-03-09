@@ -7,13 +7,45 @@
   --color-black: #1e1e1e;
   --color-white: #fff;
 
+  --font-karla: "Karla", sans-serif;
 }
 
 /* Global styles */
 @layer base {
-  /*@apply [some-tailwind-styles spaced]*/
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
-    font-family: "Karla", sans-serif;
+    font-family: var(--font-karla);
+    line-height: 1.65;
+    min-height: 100dvh;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  section {
+    @apply w-full;
+  }
+
+  .clipboard-msg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

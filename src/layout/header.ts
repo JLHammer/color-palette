@@ -1,12 +1,16 @@
-import { navbar } from "../components/navbar";
 import { create } from "../utils/create";
 import { set } from "../utils/set";
 
-export function header() {
-  let header = create("header", "bg-color-black h-24 w-full");
+import { Navbar } from "../components/navbar";
 
-  let headerLogo = create("p", "text-xl text-white lg:text-4xl");
-  headerLogo.textContent = "Colorizer Pallete Genereator";
-  set([headerLogo, navbar()], header);
+export const Header = () => {
+  let header = create(
+    "header",
+    "flex items-center justify-around text-center bg-black text-white h-24 w-full border-b px-2",
+  );
+
+  let headerLogo = create("h1", "text-xl text-white lg:text-4xl");
+  headerLogo.textContent = "Colorizer Palette Generator";
+  set([headerLogo, Navbar()], header);
   return header;
-}
+};
