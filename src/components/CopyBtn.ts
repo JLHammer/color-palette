@@ -1,15 +1,25 @@
 import { create } from "../utils/create";
 import { set } from "../utils/set";
+import { Btn } from "./Btn";
 
 export const CopyBtn = (textContent: string, onClick: () => void) => {
-  const button = create("button") as HTMLButtonElement;
-  button.textContent = textContent;
-  button.addEventListener("click", onClick);
+  const copyBtn = Btn(textContent, onClick);
+  copyBtn.classList.add(
+    "flex",
+    "items-center",
+    "gap-[0.15rem]",
+    "copy-btn-group",
+    "cursor-pointer",
+  );
 
-  const icon = create("img", "copy-icon") as HTMLImageElement;
-  icon.src = "./assets/images/copy-icon.png";
+  const span = create("span", "text-white");
+  span.textContent = textContent;
+
+  const icon = create("img", "copy-icon w-auto h-5") as HTMLImageElement;
+  icon.src = "./src/assets/images/copy-icon.png";
   icon.alt = "Copy Icon";
 
-  set([icon], button);
-  return button;
+  copyBtn.textContent = "";
+  set([span, icon], copyBtn);
+  return copyBtn;
 };
