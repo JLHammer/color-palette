@@ -3,6 +3,10 @@
 
 /* Variables */
 @theme {
+  --color-dark-gray: #212121;
+  --color-black: #1e1e1e;
+  --color-white: #fff;
+
 }
 
 /* Global styles */
@@ -13,4 +17,3 @@
     font-family: "Karla", sans-serif;
   }
 }
-
