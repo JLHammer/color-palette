@@ -4,6 +4,6 @@ import { set } from "../utils/set";
 import { ColorPalette } from "../components/ColorPalette";
 
 export const MyPalettesPage = () => {
-  const MyPalettesContainer = create("div", "my-palettes-container");
-  return MyPalettesContainer;
+  const section = create("section", "h-full flex flex-col items-center");
+  return section;
 };
