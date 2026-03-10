@@ -3,7 +3,7 @@ import { set } from "../utils/set";
 import { CopyBtn } from "./CopyBtn";
 
 export const ColorSwatch = (color: string): HTMLElement => {
-  const colorContainer = create(
+  const colorSwatch = create(
     "div",
     "flex flex-col gap-[0.2rem] color-container",
   );
@@ -27,6 +27,6 @@ export const ColorSwatch = (color: string): HTMLElement => {
   });
 
   set([colorHex, copyBtn], swatchInfo);
-  set([colorBox, swatchInfo], colorContainer);
-  return colorContainer;
+  set([colorBox, swatchInfo], colorSwatch);
+  return colorSwatch;
 };
