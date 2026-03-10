@@ -14,7 +14,7 @@ export const ColorSwatch = (color: string) => {
     "div",
     "swatch-info flex items-center justify-between",
   );
-  const colorHex = create("span", "color-hex text-white");
+  const colorHex = create("span", "color-hex tracking-wider text-white");
   colorHex.textContent = color;
 
   let copyBtn = CopyBtn("Copy", () => navigator.clipboard.writeText(color));
