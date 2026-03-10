@@ -1,14 +1,9 @@
-// array of arrays with numbers representing RGB values, e.g. [[255, 0, 0], [0, 255, 0], [0, 0, 255]]
 export function savePalette(data: Array<Array<number>>) {
-  if (!data) return;
+  if (!data) return; // Safety net in case fetchPalette in api.ts returns null, we handle error in RandomPalette.ts
 
-  const existingPalettes = localStorage.getItem("userPalettes");
-
-  if (existingPalettes) {
-    const palettes = JSON.parse(existingPalettes);
-    palettes.push(data);
-    localStorage.setItem("userPalettes", JSON.stringify(palettes));
-  } else {
-    localStorage.setItem("userPalettes", JSON.stringify([data]));
-  }
+  const existingPalettes = JSON.parse(
+    localStorage.getItem("userPalettes") || "[]",
+  );
+  existingPalettes.push(data);
+  localStorage.setItem("userPalettes", JSON.stringify(existingPalettes));
 }
