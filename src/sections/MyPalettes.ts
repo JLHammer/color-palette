@@ -5,5 +5,6 @@ import { ColorPalette } from "../components/ColorPalette";
 
 export const MyPalettesPage = () => {
   const section = create("section", "h-full flex flex-col items-center");
+ 
   return section;
 };
