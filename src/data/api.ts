@@ -1,3 +1,15 @@
+// NOGET AF KASPERS
+// export async function fetchData() {
+//   const url = "http://colormind.io/api/";
+//   const body = JSON.stringify({ model: "default" });
+
+//   try{
+//     let response = await fetch(url, {method: 'POST', body: body});
+
+//   }
+// }
+
+// Claude
 type RGB = [number, number, number];
 type ColorInput = RGB | "N";
 
