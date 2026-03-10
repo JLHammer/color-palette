@@ -1,7 +1,7 @@
 import { create } from "../utils/create";
 import { set } from "../utils/set";
 
-import { Navbar } from "../components/navbar";
+import { Navbar } from "../components/NavBar";
 
 export const Header = () => {
   let header = create(
