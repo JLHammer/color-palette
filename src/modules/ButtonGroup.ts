@@ -11,6 +11,7 @@ export const ButtonGroup = (generate: () => void, save: () => void) => {
   const buttonOne = Btn("Generate", generate);
   buttonOne.classList.add(
     "text-white",
+    "bg-black",
     "py-1",
     "px-2",
     "border",
@@ -25,6 +26,7 @@ export const ButtonGroup = (generate: () => void, save: () => void) => {
   const buttonTwo = Btn("Save this one", save);
   buttonTwo.classList.add(
     "text-white",
+    "bg-black",
     "py-1",
     "px-2",
     "border",
