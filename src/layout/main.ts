@@ -1,22 +1,22 @@
 import { create } from "../utils/create";
 import { set } from "../utils/set";
 
-import { MyPalettesPage } from "../sections/MyPalettes";
-import { RandomPalettePage } from "../sections/RandomPalette";
+import { MyPalettesSection } from "../sections/MyPalettes";
+import { RandomPaletteSection } from "../sections/RandomPalette";
 
 export const Main = () => {
   const main = create(
     "main",
-    "flex flex-col items-center bg-dark-gray w-full min-h-[calc(100vh-12rem)] p-4",
+    "flex min-h-[calc(100vh-12rem)] w-full flex-col items-center bg-dark-gray p-4",
   );
 
   function render() {
     main.innerHTML = "";
     const hash = window.location.hash;
     if (hash === "#my-palettes") {
-      set([MyPalettesPage()], main);
+      set([MyPalettesSection()], main);
     } else if (hash === "#random-palette") {
-      set([RandomPalettePage()], main);
+      set([RandomPaletteSection()], main);
     }
   }
 

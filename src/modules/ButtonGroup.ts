@@ -3,15 +3,32 @@ import { create } from "../utils/create";
 import { set } from "../utils/set";
 
 export const ButtonGroup = (generate: () => void, save: () => void) => {
-  const buttonGroup = create("div", "flex flex-col gap-4");
+  const buttonGroup = create(
+    "div",
+    "mt-[10%] flex w-full flex-col items-center gap-4 justify-self-center",
+  );
 
   const buttonOne = Btn("Generate", generate);
-  buttonOne.classList =
-    "text-white border pt-2 pb-2 pl-10 pr-10";
+  buttonOne.classList.add(
+    "text-white",
+    "py-1",
+    "px-2",
+    "border",
+    "border-white",
+    "w-9/10",
+    "bg-dark-gray",
+  );
   const buttonTwo = Btn("Save this one", save);
-  buttonTwo.classList =
-    "text-white border pt-2 pb-2 pl-10 pr-10";
+  buttonTwo.classList.add(
+    "text-white",
+    "py-1",
+    "px-2",
+    "border",
+    "border-white",
+    "w-9/10",
+    "bg-dark-gray",
+  );
 
-    set([buttonOne, buttonTwo], buttonGroup)
+  set([buttonOne, buttonTwo], buttonGroup);
   return buttonGroup;
 };

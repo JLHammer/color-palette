@@ -2,7 +2,7 @@ import { create } from "../utils/create";
 import { set } from "../utils/set";
 
 export const Footer = () => {
-  const footer = create("footer", "bg-dark-gray text-white text-center h-24");
+  const footer = create("footer", "h-24 bg-dark-gray text-center text-white");
 
   const title = create("p");
   const author = create("p");

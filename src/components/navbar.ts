@@ -1,8 +1,8 @@
 import { create } from "../utils/create";
 import { set } from "../utils/set";
 
-export const Navbar = () => {
-  const navbar = create("nav", "flex gap-4 justify-center items-center");
+export const NavBar = () => {
+  const navbar = create("nav", "flex items-center justify-center gap-4");
 
   const navLinks = [
     { label: "Random Palette", hash: "#random-palette" },
@@ -12,7 +12,7 @@ export const Navbar = () => {
   navLinks.forEach(({ label, hash }) => {
     const linkEl = create(
       "a",
-      "text-color-white border-2 px-2 py-1 transform transition-transform duration-200 hover:translate-y-[-2px]",
+      "text-color-white transform border-2 px-2 py-1 transition-transform duration-200 hover:translate-y-0.5",
     ) as HTMLAnchorElement;
     linkEl.href = hash;
     linkEl.textContent = label;
