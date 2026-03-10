@@ -47,7 +47,6 @@ export const RandomPaletteSection = () => {
   const buttonGroup = ButtonGroup(generatePalette, savePaletteHandler);
 
   generatePalette();
-  set(buttonGroup, colorPalette);
   set([colorPalette], section);
 
   return section;

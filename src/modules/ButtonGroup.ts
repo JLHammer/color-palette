@@ -17,6 +17,10 @@ export const ButtonGroup = (generate: () => void, save: () => void) => {
     "border-white",
     "w-9/10",
     "bg-dark-gray",
+    "will-change-transform",
+    "hover:scale-105",
+    "hover:bg-white",
+    "hover:text-dark-gray",
   );
   const buttonTwo = Btn("Save this one", save);
   buttonTwo.classList.add(
@@ -27,6 +31,10 @@ export const ButtonGroup = (generate: () => void, save: () => void) => {
     "border-white",
     "w-9/10",
     "bg-dark-gray",
+    "will-change-transform",
+    "hover:scale-105",
+    "hover:bg-white",
+    "hover:text-dark-gray",
   );
 
   set([buttonOne, buttonTwo], buttonGroup);

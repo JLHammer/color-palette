@@ -13,19 +13,11 @@
 /* Global styles */
 @layer base {
   html {
-    scroll-behavior: smooth;
+    @apply overflow-y-scroll scroll-smooth;
   }
 
   body {
-    font-family: var(--font-karla);
-    line-height: 1.65;
-    min-height: 100dvh;
-  }
-
-  #app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100dvh;
+    @apply min-h-screen font-karla leading-relaxed;
   }
 
   h1,
@@ -34,9 +26,8 @@
   h4,
   h5,
   h6 {
-    font-weight: 700;
+    @apply font-bold tracking-tight;
     line-height: 1.15;
-    letter-spacing: -0.02em;
   }
 
   section {
@@ -44,8 +35,6 @@
   }
 
   .clipboard-msg {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
 }

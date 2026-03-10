@@ -9,9 +9,13 @@ export const initApp = () => {
   const app = get("#app");
 
   if (app) {
-    app.classList = "min-h-full";
+    app.classList = "flex min-h-screen flex-col bg-dark-gray";
 
-    set([Header(), Main(), Footer()], app);
+    const { el: mainEl, render } = Main();
+
+    render("random-palette");
+
+    set([Header((route) => render(route)), mainEl, Footer()], app);
     return app;
   }
 };
