@@ -12,6 +12,8 @@ export const Main = () => {
 
   let currentRoute: Route | null = null;
 
+  const randomPaletteSection = RandomPaletteSection();
+
   function render(route: Route) {
     if (currentRoute === route) return;
     currentRoute = route;
@@ -19,7 +21,7 @@ export const Main = () => {
     if (route === "my-palettes") {
       set([MyPalettesSection()], main);
     } else if (route === "random-palette") {
-      set([RandomPaletteSection()], main);
+      set([randomPaletteSection], main);
     }
   }
 
