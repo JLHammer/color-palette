@@ -3,8 +3,8 @@ import { set } from "../utils/set";
 
 import { ColorPalette } from "../modules/ColorPalette";
 
-export const MyPalettesPage = () => {
-  const section = create("section", "h-full flex flex-col items-center");
+export const MyPalettesSection = () => {
+  const section = create("section", "flex h-full flex-col items-center");
 
   return section;
 };

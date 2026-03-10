@@ -4,7 +4,7 @@ import { set } from "../utils/set";
 export const ColorPalette = () => {
   const swatchGroup = create(
     "div",
-    "w-full  gap-x-3 gap-y-2 swatch-group",
+    "swatch-group grid w-full grid-cols-2 gap-x-3 gap-y-2",
   );
 
   return swatchGroup;
