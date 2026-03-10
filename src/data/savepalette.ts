@@ -3,7 +3,6 @@ export function savePalette(data: Array<Array<number>>) {
   if (!data) return;
 
   const existingPalettes = localStorage.getItem("userPalettes");
-    
 
   if (existingPalettes) {
     const palettes = JSON.parse(existingPalettes);
