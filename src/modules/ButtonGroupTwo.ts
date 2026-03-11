@@ -2,13 +2,13 @@ import { Btn } from "../components/Btn";
 import { create } from "../utils/create";
 import { set } from "../utils/set";
 
-export const buttonGroupTwo = (set active: () => void, delete: () => void) => {
+export const buttonGroupTwo = (setActive: () => void, delete: () => void) => {
   const buttonGroupTwo = create(
     "div",
     "mt-[10%] flex w-full flex-col items-center gap-4 justify-self-center",
   );
 
-  const buttonSet = Btn("Generate", set active);
+  const buttonSet = Btn("Set active", setActive);
   buttonSet.classList.add(
     "text-white",
     "bg-black",
@@ -23,7 +23,7 @@ export const buttonGroupTwo = (set active: () => void, delete: () => void) => {
     "hover:bg-white",
     "hover:text-dark-gray",
   );
-  const buttonDelete = Btn("Save this one", delete);
+  const buttonDelete = Btn("Delete", delete);
   buttonDelete.classList.add(
     "text-white",
     "bg-black",
