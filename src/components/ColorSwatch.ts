@@ -5,7 +5,7 @@ import { CopyBtn } from "./CopyBtn";
 export const ColorSwatch = (color: string) => {
   const colorSwatch = create(
     "div",
-    "color-container flex flex-col gap-[0.2rem]",
+    "color-container flex flex-col gap-[0.2rem] flex-1 min-w-0",
   );
   const colorBox = create("div", "color-box relative aspect-square w-full");
   colorBox.style.backgroundColor = color;
@@ -52,5 +52,5 @@ export const ColorSwatch = (color: string) => {
     copyBtn = newCopyBtn;
   };
 
-  return { element: colorSwatch, update };
+  return { element: colorSwatch, colorHex, copyBtn, update };
 };

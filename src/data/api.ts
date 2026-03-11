@@ -8,7 +8,6 @@ export const fetchPalette = async () => {
       throw new Error();
     }
     let data = await response.json();
-    console.log(data);
     return data.result;
   } catch (err) {
     console.error(err);

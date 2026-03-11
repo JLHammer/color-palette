@@ -20,16 +20,16 @@ export const RandomPaletteSection = () => {
     );
   };
 
-  const savePaletteHandler = async () => {};
-
   const swatches: { element: HTMLElement; update: (hex: string) => void }[] =
     [];
+  const currentHexes: string[] = [];
 
   const generatePalette = async () => {
     const colorData = await fetchPalette();
 
     colorData.forEach((data: number[], i: number) => {
       const hex = rgbToHex(data[0], data[1], data[2]);
+      currentHexes[i] = hex;
       if (swatches[i]) {
         swatches[i].update(hex);
       } else {
@@ -43,6 +43,11 @@ export const RandomPaletteSection = () => {
       set(buttonGroup, colorPalette);
     }
   };
+
+  const savePaletteHandler = async () => {
+    savePalette(currentHexes);
+  };
+
 
   const buttonGroup = ButtonGroup(generatePalette, savePaletteHandler);
 
