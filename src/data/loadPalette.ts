@@ -1,7 +1,7 @@
-addEventListener("DOMContentLoaded", () => {
-  const savedPalette = localStorage.getItem("userPalette");
+export const loadPalette = (): string[][] => {
+  const savedPalette = localStorage.getItem("userPalettes");
   if (savedPalette) {
-    const data = JSON.parse(savedPalette);
-    return data;
+    return JSON.parse(savedPalette);
   }
-});
+  return [];
+};

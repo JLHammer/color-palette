@@ -6,4 +6,3 @@ import { fetchPalette } from "./data/api.ts";
 import { initApp } from "./app";
 
 initApp();
-fetchPalette();
