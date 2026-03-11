@@ -20,7 +20,11 @@
     @apply min-h-screen font-karla leading-relaxed;
   }
 
-  h1,
+  h1 {
+    @apply font-bold tracking-wider;
+    line-height: 1.15;
+  }
+
   h2,
   h3,
   h4,
@@ -36,5 +40,27 @@
 
   .clipboard-msg {
     @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+}
+
+@layer components {
+  .gradient-border {
+    background:
+      linear-gradient(white, white) padding-box,
+      var(--active-gradient) border-box;
+    border: 2px solid transparent;
+  }
+
+  .gradient-text {
+    background-image: var(--active-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-divider {
+    background: var(--active-gradient);
+    height: 2px;
+    width: 100%;
   }
 }
