@@ -14,7 +14,7 @@ export const NavBar = (onNavigate: (route: Route) => void) => {
   navLinks.forEach(({ label, route }) => {
     const linkEl = create(
       "a",
-      "text-color-white leading-tight transform cursor-pointer border-2 gradient-border px-2 py-1 transition-transform duration-200 hover:translate-y-0.5",
+      "text-color-white gradient-border transform cursor-pointer border-2 px-2 py-1 text-sm leading-none transition-transform duration-200 hover:translate-y-0.5 md:text-base lg:px-3 lg:py-2",
     ) as HTMLAnchorElement;
     linkEl.textContent = label;
     linkEl.addEventListener("click", (e) => {
