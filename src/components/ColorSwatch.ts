@@ -52,5 +52,5 @@ export const ColorSwatch = (color: string) => {
     copyBtn = newCopyBtn;
   };
 
-  return { element: colorSwatch, colorHex, copyBtn, update };
+  return { element: colorSwatch, update };
 };

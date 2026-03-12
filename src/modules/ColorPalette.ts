@@ -1,5 +1,4 @@
 import { create } from "../utils/create";
-import { set } from "../utils/set";
 
 export const ColorPalette = () => {
   const swatchGroup = create(

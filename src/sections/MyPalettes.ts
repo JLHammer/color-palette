@@ -28,9 +28,7 @@ export const MyPalettesSection = () => {
     const divider = Divider();
 
     hexArray.forEach((hex: string) => {
-      const { element, colorHex, copyBtn } = ColorSwatch(hex);
-      colorHex.classList.add("text-[0.5em]");
-      copyBtn.classList.add("text-[0.5em]");
+      const { element} = ColorSwatch(hex);
       set(element, colorPalette);
     });
 
