@@ -5,8 +5,9 @@ import { ButtonGroupTwo } from '../modules/ButtonGroupTwo';
 import { ColorPalette } from "../modules/ColorPalette";
 import { ColorSwatch } from "../components/ColorSwatch";
 import { Divider } from "../components/Divider";
-import { loadPalette } from "../data/loadPalette";
+import { loadPalette } from "../utils/loadPalette";
 import { deletePalette } from "../utils/deletePalette";
+import { setActive } from "../utils/setActive";
 
 export const MyPalettesSection = () => {
   const section = create(
@@ -18,7 +19,9 @@ export const MyPalettesSection = () => {
     const paletteAndButtonsWrapper = create("div", "flex w-full flex-col items-center gap-3");
     const colorPalette = ColorPalette();
     colorPalette.classList = "swatch-group flex w-full gap-3"
-    const buttonGroupTwo = ButtonGroupTwo(setActive, () => {
+    const buttonGroupTwo = ButtonGroupTwo(() => {
+      setActive(hexArray);
+    }, () => {
       deletePalette(Array.from(section.children).indexOf(paletteAndButtonsWrapper));
       paletteAndButtonsWrapper.remove();
     });
@@ -35,10 +38,6 @@ export const MyPalettesSection = () => {
     set([colorPalette, buttonGroupTwo], paletteAndButtonsWrapper);
     set([paletteAndButtonsWrapper], section);
   });
-
-
-  function setActive() { }
-
 
 
   return section;

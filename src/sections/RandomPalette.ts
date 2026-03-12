@@ -4,9 +4,9 @@ import { set } from "../utils/set";
 import { ColorPalette } from "../modules/ColorPalette";
 import { ColorSwatch } from "../components/ColorSwatch";
 import { fetchPalette } from "../data/api";
-import { savePalette } from "../data/savepalette";
+import { savePalette } from "../utils/savepalette";
 import { ButtonGroup } from "../modules/ButtonGroup";
-import { applyGradient } from "../utils/ApplyGradient";
+import { setActive } from "../utils/setActive";
 
 export const RandomPaletteSection = () => {
   const section = create(
@@ -48,7 +48,7 @@ export const RandomPaletteSection = () => {
 
     if (isFirstGeneration) {
       initialPalette = [...currentHexes];
-      applyGradient(initialPalette);
+      setActive(initialPalette);
       isFirstGeneration = false;
     }
 
