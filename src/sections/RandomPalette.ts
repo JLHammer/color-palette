@@ -46,7 +46,6 @@ export const RandomPaletteSection = () => {
     if (isFirstGeneration) {
       initialPalette = [...currentHexes];
       applyGradient(initialPalette)
-      console.log(initialPalette);
       isFirstGeneration = false;
     }
 

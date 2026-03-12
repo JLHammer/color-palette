@@ -23,7 +23,7 @@ export const ButtonGroupTwo = (
     "bg-dark-gray",
     "will-change-transform",
     "hover:scale-105",
-"z-10",
+    "z-10",
   );
   const buttonDelete = Btn("Delete", deletePalette);
   buttonDelete.classList.add(
