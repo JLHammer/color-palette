@@ -6,6 +6,7 @@ import { ColorSwatch } from "../components/ColorSwatch";
 import { fetchPalette } from "../data/api";
 import { savePalette } from "../data/savepalette";
 import { ButtonGroup } from "../modules/ButtonGroup";
+import { applyGradient } from "../utils/ApplyGradient";
 
 export const RandomPaletteSection = () => {
   const section = create(
@@ -22,7 +23,10 @@ export const RandomPaletteSection = () => {
 
   const swatches: { element: HTMLElement; update: (hex: string) => void }[] =
     [];
+
   const currentHexes: string[] = [];
+  let initialPalette: string[] = [];
+  let isFirstGeneration = true;
 
   const generatePalette = async () => {
     const colorData = await fetchPalette();
@@ -39,15 +43,22 @@ export const RandomPaletteSection = () => {
       }
     });
 
+    if (isFirstGeneration) {
+      initialPalette = [...currentHexes];
+      applyGradient(initialPalette)
+      console.log(initialPalette);
+      isFirstGeneration = false;
+    }
+
     if (swatches.length === colorData.length) {
       set(buttonGroup, colorPalette);
     }
   };
 
+
   const savePaletteHandler = async () => {
     savePalette(currentHexes);
   };
-
 
   const buttonGroup = ButtonGroup(generatePalette, savePaletteHandler);
 

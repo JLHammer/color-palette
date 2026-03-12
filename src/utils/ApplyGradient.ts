@@ -5,6 +5,11 @@ export const applyGradient = (colors: string[]): void => {
     root.style.setProperty(`--palette-color-${index}`, hex);
   });
 
-  const stops = colors.map((_, i) => `var(--palette-color-${i})`).join(", ");
-  root.style.setProperty("--active-gradient", `radial-gradient(circle, ${stops})`);
+  const gradientStops = colors
+    .map((_, i) => `var(--palette-color-${i})`)
+    .join(", ");
+  root.style.setProperty(
+    "--active-gradient",
+    `linear-gradient(-145deg, ${gradientStops})`,
+  );
 };

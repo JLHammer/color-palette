@@ -2,10 +2,13 @@ import { Btn } from "../components/Btn";
 import { create } from "../utils/create";
 import { set } from "../utils/set";
 
-export const ButtonGroupTwo = (setActive: () => void, deletePalette: () => void) => {
+export const ButtonGroupTwo = (
+  setActive: () => void,
+  deletePalette: () => void,
+) => {
   const buttonGroupTwo = create(
     "div",
-    "flex justify-center items-center gap-4 justify-self-center relative w-full",
+    "relative flex w-full items-center justify-center gap-4 justify-self-center",
   );
 
   const buttonSet = Btn("Set active", setActive);
@@ -14,14 +17,13 @@ export const ButtonGroupTwo = (setActive: () => void, deletePalette: () => void)
     "bg-black",
     "py-1",
     "px-2",
-    "border",
-    "border-white",
+    "border-2",
+    "gradient-border",
     "w-[40%]",
     "bg-dark-gray",
     "will-change-transform",
     "hover:scale-105",
-    "hover:bg-white",
-    "hover:text-dark-gray", "z-10"
+"z-10",
   );
   const buttonDelete = Btn("Delete", deletePalette);
   buttonDelete.classList.add(
@@ -29,14 +31,13 @@ export const ButtonGroupTwo = (setActive: () => void, deletePalette: () => void)
     "bg-black",
     "py-1",
     "px-2",
-    "border",
-    "border-white",
+    "border-2",
+    "gradient-border",
     "w-[40%]",
     "bg-dark-gray",
     "will-change-transform",
     "hover:scale-105",
-    "hover:bg-white",
-    "hover:text-dark-gray", "z-10"
+    "z-10",
   );
 
   set([buttonSet, buttonDelete], buttonGroupTwo);
