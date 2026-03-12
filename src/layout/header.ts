@@ -9,7 +9,7 @@ export const Header = (onNavigate: (route: Route) => void) => {
     "flex h-24 w-full items-center justify-around border-b bg-black px-2 text-center text-white",
   );
 
-  let headerLogo = create("h1", "text-xl text-white lg:text-4xl");
+  let headerLogo = create("h1", "gradient-text");
   headerLogo.textContent = "Colorizer Palette Generator";
   set([headerLogo, NavBar(onNavigate)], header);
   return header;
