@@ -13,6 +13,9 @@ export const RandomPaletteSection = () => {
     "section",
     "random-palette-section flex w-full flex-col items-center",
   );
+  const headLine = create("h2", "hidden text-7xl tracking-widest gradient-text mt-18 mb-10 lg:block");
+  headLine.textContent = "Your new colors";
+
   const colorPalette = ColorPalette();
 
   const rgbToHex = (r: number, g: number, b: number): string => {
@@ -54,7 +57,6 @@ export const RandomPaletteSection = () => {
     }
   };
 
-
   const savePaletteHandler = async () => {
     savePalette(currentHexes);
   };
@@ -62,7 +64,7 @@ export const RandomPaletteSection = () => {
   const buttonGroup = ButtonGroup(generatePalette, savePaletteHandler);
 
   generatePalette();
-  set([colorPalette], section);
+  set([headLine, colorPalette], section);
 
   return section;
 };
