@@ -1,4 +1,4 @@
-export const applyGradient = (colors: string[]): void => {
+export const setActive = (colors: string[]): void => {
   const root = document.documentElement;
 
   colors.forEach((hex, index) => {
