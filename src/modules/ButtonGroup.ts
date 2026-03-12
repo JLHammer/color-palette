@@ -5,7 +5,7 @@ import { set } from "../utils/set";
 export const ButtonGroup = (generate: () => void, save: () => void) => {
   const buttonGroup = create(
     "div",
-    "mt-[10%] flex w-full flex-col items-center gap-4 justify-self-center",
+    "mt-[10%] flex w-full flex-col items-center gap-4 justify-self-center button-group lg:mt-0 lg:justify-self-auto lg:flex-row lg:w-fit lg:gap-8",
   );
 
   const buttonGenerate = Btn("Generate", generate);
