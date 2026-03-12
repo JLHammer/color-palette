@@ -17,11 +17,11 @@
   }
 
   body {
-    @apply min-h-screen font-karla leading-relaxed;
+    @apply min-h-screen font-karla text-sm leading-relaxed;
   }
 
   h1 {
-    @apply font-bold tracking-wider leading-[1.15] text-xl lg:text-4xl;
+    @apply text-xl leading-[1.15] tracking-wider md:text-2xl lg:text-4xl;
   }
 
   h2,
@@ -44,7 +44,7 @@
 @layer components {
   .gradient-border {
     background:
-         linear-gradient(var(--color-black), var(--color-black)) padding-box,
+      linear-gradient(var(--color-black), var(--color-black)) padding-box,
       var(--active-gradient) border-box;
     border: 2px solid transparent;
   }
