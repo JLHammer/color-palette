@@ -15,7 +15,7 @@ export const CopyBtn = (textContent: string, onClick: () => void) => {
   const span = create("span", "text-white");
   span.textContent = textContent;
 
-  const icon = create("img", "copy-icon h-[1rem] w-auto") as HTMLImageElement;
+  const icon = create("img", "copy-icon h-4 w-auto md:h-6 lg:h-7") as HTMLImageElement;
   icon.src = "./src/assets/images/copy-icon.png";
   icon.alt = "Copy Icon";
 

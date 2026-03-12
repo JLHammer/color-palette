@@ -28,9 +28,9 @@ export const ColorSwatch = (color: string) => {
 
   const swatchInfo = create(
     "div",
-    "swatch-info flex items-center justify-between",
+    "swatch-info flex items-center justify-between md:text-base",
   );
-  const colorHex = create("span", "color-hex tracking-wider text-white");
+  const colorHex = create("span", "color-hex tracking-wider text-white md:text-base");
   colorHex.textContent = color;
 
   let copyBtn = CopyBtn("Copy", () => {
