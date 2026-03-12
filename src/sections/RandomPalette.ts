@@ -11,9 +11,9 @@ import { setActive } from "../utils/setActive";
 export const RandomPaletteSection = () => {
   const section = create(
     "section",
-    "random-palette-section flex w-full flex-col items-center",
+    "random-palette-section flex w-full flex-col items-center lg:gap-10",
   );
-  const headLine = create("h2", "hidden text-7xl tracking-widest gradient-text mt-18 mb-10 lg:block");
+  const headLine = create("h2", "hidden text-7xl tracking-widest gradient-text lg:mt-20 lg:mb-2 lg:block");
   headLine.textContent = "Your new colors";
 
   const colorPalette = ColorPalette();
@@ -49,11 +49,16 @@ export const RandomPaletteSection = () => {
     if (isFirstGeneration) {
       initialPalette = [...currentHexes];
       setActive(initialPalette);
-      isFirstGeneration = false;
-    }
 
-    if (swatches.length === colorData.length) {
-      set(buttonGroup, colorPalette);
+      if (swatches.length === colorData.length) {
+        if (window.innerWidth < 1024) {
+          set(buttonGroup, colorPalette);
+        } else {
+          set(buttonGroup, section);
+        }
+      }
+
+      isFirstGeneration = false;
     }
   };
 
