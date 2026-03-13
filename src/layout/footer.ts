@@ -4,7 +4,7 @@ import { set } from "../utils/set";
 export const Footer = () => {
   const footer = create(
     "footer",
-    "mt-auto flex flex-col items-center justify-end gap-1 bg-dark-gray px-2 pt-9 pb-5 text-center text-white",
+    "mt-auto flex flex-col items-center justify-end gap-1 bg-dark-gray px-2 pt-7 pb-5 text-center text-white",
   );
 
   const title = create("p", "text-xs");

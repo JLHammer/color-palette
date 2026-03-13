@@ -11,9 +11,12 @@ import { setActive } from "../utils/setActive";
 export const RandomPaletteSection = () => {
   const section = create(
     "section",
-    "random-palette-section flex w-full flex-col items-center lg:gap-10",
+    "random-palette-section flex w-full flex-col items-center p-4 md:p-10 md:px-16 lg:px-3 lg:gap-12",
   );
-  const headLine = create("h2", "hidden text-7xl tracking-widest gradient-text lg:mt-20 lg:mb-2 lg:block");
+  const headLine = create(
+    "h2",
+    "gradient-text hidden text-7xl tracking-widest lg:mt-18 lg:mb-2 lg:block",
+  );
   headLine.textContent = "Your new colors";
 
   const colorPalette = ColorPalette();
