@@ -7,7 +7,7 @@ import { RandomPaletteSection } from "../sections/RandomPalette";
 export const Main = () => {
   const main = create(
     "main",
-    "flex min-h-[calc(100vh-12rem)] w-full flex-col items-center bg-dark-gray p-4 md:p-6 md:px-14",
+    "flex min-h-[calc(100vh-12rem)] w-full flex-col items-center bg-dark-gray",
   );
 
   let currentRoute: Route | null = null;

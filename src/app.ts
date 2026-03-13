@@ -13,7 +13,7 @@ export const initApp = () => {
 
     const { el: mainEl, render } = Main();
 
-    render("random-palette");
+    render("my-palettes");
 
     set([Header((route) => render(route)), mainEl, Footer()], app);
     return app;
