@@ -23,5 +23,5 @@ export const CopyBtn = (textContent: string, onClick: () => void) => {
 
   copyBtn.textContent = "";
   set([span, icon], copyBtn);
-  return copyBtn;
+  return { copyBtn, span };
 };

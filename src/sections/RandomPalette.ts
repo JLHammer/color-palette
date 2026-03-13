@@ -17,6 +17,7 @@ export const RandomPaletteSection = () => {
   headLine.textContent = "Your new colors";
 
   const colorPalette = ColorPalette();
+  colorPalette.classList.add("lg:grid-cols-5");
 
   const rgbToHex = (r: number, g: number, b: number): string => {
     return (
@@ -51,11 +52,16 @@ export const RandomPaletteSection = () => {
       setActive(initialPalette);
 
       if (swatches.length === colorData.length) {
-        if (window.innerWidth < 1024) {
-          set(buttonGroup, colorPalette);
-        } else {
-          set(buttonGroup, section);
-        }
+        const placeButtonGroup = () => {
+          if (window.innerWidth < 1024) {
+            set(buttonGroup, colorPalette);
+          } else {
+            set(buttonGroup, section);
+          }
+        };
+
+        placeButtonGroup();
+        window.addEventListener("resize", placeButtonGroup);
       }
 
       isFirstGeneration = false;

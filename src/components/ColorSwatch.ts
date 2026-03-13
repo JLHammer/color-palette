@@ -33,7 +33,7 @@ export const ColorSwatch = (color: string) => {
   const colorHex = create("span", "color-hex tracking-wider text-white md:text-base");
   colorHex.textContent = color;
 
-  let copyBtn = CopyBtn("Copy", () => {
+  let { copyBtn, span: copySpan } = CopyBtn("Copy", () => {
     navigator.clipboard.writeText(color);
     showCopied();
   });
@@ -44,13 +44,14 @@ export const ColorSwatch = (color: string) => {
   const update = (hex: string) => {
     colorBox.style.backgroundColor = hex;
     colorHex.textContent = hex;
-    const newCopyBtn = CopyBtn("Copy", () => {
+    const { copyBtn: newCopyBtn, span: newSpan } = CopyBtn("Copy", () => {
       navigator.clipboard.writeText(hex);
       showCopied();
     });
     copyBtn.replaceWith(newCopyBtn);
     copyBtn = newCopyBtn;
+    copySpan = newSpan;
   };
 
-  return { element: colorSwatch, update };
+  return { element: colorSwatch, update, copySpan, colorHex };
 };
