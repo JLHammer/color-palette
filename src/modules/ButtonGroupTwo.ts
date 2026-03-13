@@ -8,7 +8,7 @@ export const ButtonGroupTwo = (
 ) => {
   const buttonGroupTwo = create(
     "div",
-    "relative flex w-full items-center justify-center gap-4 justify-self-center",
+    "relative flex w-full items-center justify-center gap-4 justify-self-center md:flex-col",
   );
 
   const buttonSet = Btn("Set active", setActive);
@@ -24,6 +24,7 @@ export const ButtonGroupTwo = (
     "will-change-transform",
     "hover:scale-105",
     "z-10",
+    "md:w-9/10",
   );
   const buttonDelete = Btn("Delete", deletePalette);
   buttonDelete.classList.add(
@@ -38,6 +39,7 @@ export const ButtonGroupTwo = (
     "will-change-transform",
     "hover:scale-105",
     "z-10",
+    "md:w-9/10",
   );
 
   set([buttonSet, buttonDelete], buttonGroupTwo);

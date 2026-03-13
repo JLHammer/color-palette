@@ -2,6 +2,8 @@ import { create } from "../utils/create";
 import { set } from "../utils/set";
 import { Btn } from "./Btn";
 
+import copyIconSrc from "../assets/images/copy-icon.png";
+
 export const CopyBtn = (textContent: string, onClick: () => void) => {
   const copyBtn = Btn(textContent, onClick);
   copyBtn.classList.add(
@@ -16,10 +18,10 @@ export const CopyBtn = (textContent: string, onClick: () => void) => {
   span.textContent = textContent;
 
   const icon = create("img", "copy-icon h-4 w-auto md:h-6 lg:h-7") as HTMLImageElement;
-  icon.src = "./src/assets/images/copy-icon.png";
+  icon.src = copyIconSrc;
   icon.alt = "Copy Icon";
 
   copyBtn.textContent = "";
   set([span, icon], copyBtn);
-  return copyBtn;
+  return { copyBtn, span };
 };
