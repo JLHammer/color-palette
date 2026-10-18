@@ -2,12 +2,11 @@
   "tailwindCSS.includeLanguages": {
     "typescript": "html"
   },
-  "tailwindCSS.experimental.classRegex": [
-    "[\"'`]([^\"'`]*).*?[\"'`]"
-  ],
+  "tailwindCSS.experimental.classRegex": ["[\"'`]([^\"'`]*).*?[\"'`]"],
   "editor.quickSuggestions": {
     "other": "on",
     "comments": "off",
     "strings": "on"
-  }
+  },
+  "liveServer.settings.port": 5502
 }

@@ -1,5 +1,5 @@
 export const fetchPalette = async () => {
-  const url = "http://colormind.io/api/";
+  const url = "/api/";
   const body = JSON.stringify({ model: "default" });
 
   try {
